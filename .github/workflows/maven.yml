@@ -20,8 +20,6 @@ jobs:
         java-version: 1.8
     - name: Compile with Maven
       run: mvn compile
-    - name: Assemble with Gradle
-      run: sh ./gradlew assemble
   build:
     runs-on: ubuntu-latest
     steps:
@@ -32,8 +30,6 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Build with Gradle
-      run: sh ./gradlew build
     #- name: Publish to GitHub Packages Apache Maven
     #  run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
     #  env:
@@ -48,5 +44,3 @@ jobs:
         java-version: 1.8
     - name: Test with Maven
       run: mvn test
-    - name: Gradle Check, Gradle Test is inclusive
-      run: sh ./gradlew assemble check
